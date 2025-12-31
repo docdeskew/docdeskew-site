@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free beautiful document scan online. Scan from photo, document scanner online, photo to scan: fix skew & perspective and download a clean scan." />
+  <meta name="keywords" content="free document deskew, deskew online, document dewarp, scan document online, perspective correction, free scan online, document perspective correction, 文書 傾き 補正 無料, ドキュメント スキャン 補正, 免费 文档 去倾斜, 透视 校正 在线, escanear documento online, corrección de perspectiva documento, تصحيح منظور المستند, выпрямить документ онлайн, 문서 기울기 보정" />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="canonical" href="https://docdeskew.com/" />
+  <link rel="alternate" hreflang="en" href="https://docdeskew.com/?lang=en" />
+  <link rel="alternate" hreflang="ja" href="https://docdeskew.com/?lang=ja" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docdeskew.com/?lang=zh-hans" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docdeskew.com/?lang=zh-hant" />
+  <link rel="alternate" hreflang="es" href="https://docdeskew.com/?lang=es" />
+  <link rel="alternate" hreflang="ko" href="https://docdeskew.com/?lang=ko" />
+  <link rel="alternate" hreflang="ru" href="https://docdeskew.com/?lang=ru" />
+  <link rel="alternate" hreflang="ar" href="https://docdeskew.com/?lang=ar" />
+  <link rel="alternate" hreflang="x-default" href="https://docdeskew.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DocDeskew" />
+  <meta property="og:title" content="Free Beautiful Document Scan Online | DocDeskew" />
+  <meta property="og:description" content="Free document deskew online. Fix skew and perspective, auto-detect page corners, and download a clean scan." />
+  <meta property="og:url" content="https://docdeskew.com/" />
+  <meta property="og:image" content="https://docdeskew.com/doc_en.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ja_JP" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Beautiful Document Scan Online | DocDeskew" />
+  <meta name="twitter:description" content="Free document deskew online. Fix skew and perspective, auto-detect page corners, and download a clean scan." />
+  <meta name="twitter:image" content="https://docdeskew.com/doc_en.jpg" />
+
+  <meta name="theme-color" content="#1a1a2e" />
+  <title>Free Beautiful Document Scan Online | DocDeskew</title>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "DocDeskew",
+      "url": "https://docdeskew.com/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "description": "Free document deskew online. Fix skew and perspective, auto-detect page corners, and download a clean scan.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "inLanguage": ["en", "ja", "zh-Hans", "zh-Hant", "es", "ko", "ru", "ar"]
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1a1a2e;
+      color: #eee;
+    }
+
+    a { color: inherit; }
+
+    .privacy-banner {
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: rgba(15, 15, 35, 0.92);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .privacy-banner strong {
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .privacy-text {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      min-width: 0;
+      font-size: 13px;
+      color: #d7d7e6;
+      line-height: 1.25;
+    }
+
+    .privacy-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(233, 69, 96, 0.18);
+      border: 1px solid rgba(233, 69, 96, 0.25);
+      color: #ffd8df;
+      white-space: nowrap;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+
+    .privacy-link {
+      font-size: 13px;
+      color: #cfd6ff;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(207, 214, 255, 0.35);
+      white-space: nowrap;
+    }
+
+    .privacy-link:hover { color: #fff; }
+
+    .lang-select {
+      padding: 8px 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      font-size: 13px;
+      background: rgba(15, 15, 35, 0.9);
+      color: #fff;
+      max-width: 210px;
+    }
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 18px 20px 28px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      margin: 14px 0 8px;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.65);
+      margin: 0 0 18px;
+      font-size: 14px;
+    }
+
+    .top-area {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    #status {
+      padding: 10px 14px;
+      background: rgba(15, 15, 35, 0.9);
+      border-radius: 10px;
+      color: #c9c9d8;
+      border-left: 4px solid #667eea;
+    }
+
+    #status:empty { display: none; }
+
+    #status.loading { border-left-color: #f6ad55; color: #ffd2a0; }
+    #status.success { border-left-color: #48bb78; color: #bff3d4; }
+    #status.error { border-left-color: #f56565; color: #ffd0d0; }
+
+    .howto {
+      width: 100%;
+      background: rgba(15, 52, 96, 0.75);
+      border-radius: 10px;
+      border-left: 4px solid rgba(233, 69, 96, 0.85);
+      padding: 10px 14px;
+      color: #e3e3f0;
+      overflow: hidden;
+    }
+
+    .howto-title {
+      font-weight: 900;
+      color: #ffd8df;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      opacity: 0.95;
+    }
+
+    .howto-flow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .howto-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(15, 15, 35, 0.55);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #fff;
+      font-weight: 900;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .howto-sep {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+      flex: 0 0 auto;
+    }
+
+    .howto-sep::before {
+      content: '›';
+      color: rgba(255,255,255,0.70);
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
+    html[dir="rtl"] .howto-flow {
+      flex-direction: row-reverse;
+    }
+    html[dir="rtl"] .howto-sep::before {
+      content: '‹';
+    }
+
+    .controls {
+      background: #16213e;
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .primary-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    input[type="file"],
+    select {
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      font-size: 14px;
+      background: #0f0f23;
+      color: #fff;
+    }
+
+    .file-input {
+      flex: 1 1 420px;
+      min-width: 240px;
+    }
+
+    button {
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 800;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.35);
+    }
+
+    button:disabled {
+      background: #444;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    button.secondary {
+      background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    }
+
+    button.success {
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    }
+
+    .canvas-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .canvas-wrapper {
+      max-width: 100%;
+      flex: 1 1 640px;
+      min-width: 320px;
+      text-align: center;
+      background: #16213e;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .canvas-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 0 0 12px 0;
+      width: 100%;
+    }
+
+    .canvas-header h3 {
+      margin: 0;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .result-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .result-actions select {
+      max-width: 260px;
+    }
+
+    .source-container {
+      position: relative;
+      display: inline-block;
+      cursor: crosshair;
+    }
+
+    canvas { border-radius: 10px; background: #000; max-width: 100%; height: auto; }
+
+    #outputCanvas {
+      max-width: 100%;
+      max-height: 800px;
+      width: auto;
+      height: auto;
+    }
+
+
+    .control-point {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      cursor: move;
+      transform: translate(-50%, -50%);
+      border: 2px solid white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      transition: transform 0.1s;
+    }
+
+    .control-point:hover { transform: translate(-50%, -50%) scale(1.25); }
+    .control-point.corner { background: #f56565; width: 20px; height: 20px; }
+    .control-point.edge { background: #48bb78; width: 14px; height: 14px; }
+    .control-point.grid { background: #63b3ed; width: 12px; height: 12px; }
+    .control-point.dragging {
+      transform: translate(-50%, -50%) scale(1.35);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    .preview-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background: transparent !important;
+    }
+
+    #sourceCanvas { display: block; }
+
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10, 10, 18, 0.55);
+      backdrop-filter: blur(3px);
+      z-index: 1200;
+    }
+
+    .is-loading .loading-overlay { display: flex; }
+
+    .loading-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+      border-radius: 14px;
+      background: rgba(15, 15, 35, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    .spinner {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, 0.18);
+      border-top-color: #667eea;
+      animation: spin 0.95s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      transform: translateX(-50%);
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(15, 15, 35, 0.92);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+      color: #fff;
+      font-weight: 800;
+      font-size: 13px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.16s ease;
+      z-index: 1300;
+    }
+
+    .toast.show { opacity: 1; }
+
+    .footer {
+      max-width: 1600px;
+      margin: 14px auto 28px;
+      padding: 0 20px;
+      text-align: center;
+      color: rgba(255,255,255,0.55);
+      font-size: 12px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(10, 10, 18, 0.62);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+      z-index: 1250;
+    }
+
+    .modal-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      width: min(860px, 100%);
+      max-height: min(78vh, 760px);
+      overflow: auto;
+      border-radius: 14px;
+      background: rgba(22, 33, 62, 0.98);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+      padding: 16px;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 10px;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .modal-close {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(15, 15, 35, 0.65);
+      color: #fff;
+      border-radius: 10px;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      line-height: 1;
+      font-size: 20px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .modal-close:hover { filter: brightness(1.1); }
+
+    .modal-body {
+      color: rgba(255,255,255,0.82);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .modal-body h3 {
+      color: #fff;
+      margin: 14px 0 8px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .modal-body ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    .modal-body li {
+      margin: 8px 0;
+    }
+
+    html.modal-open { overflow: hidden; }
+
+
+    @media (max-width: 820px) {
+      .container { padding: 14px 12px 22px; }
+      .privacy-text { display: none; }
+
+      .top-actions { flex-wrap: wrap; justify-content: flex-end; }
+      .lang-select { max-width: 180px; }
+
+      .primary-row { flex-direction: column; align-items: stretch; }
+      .file-input {
+        width: 100%;
+        min-width: 0;
+        height: 44px;
+        padding: 8px 10px;
+        font-size: 16px;
+      }
+      .file-input::file-selector-button {
+        height: 30px;
+        padding: 6px 10px;
+        border: 0;
+        border-radius: 10px;
+        margin-right: 10px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        font-weight: 900;
+        cursor: pointer;
+      }
+      .file-input::-webkit-file-upload-button {
+        height: 30px;
+        padding: 6px 10px;
+        border: 0;
+        border-radius: 10px;
+        margin-right: 10px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        font-weight: 900;
+        cursor: pointer;
+      }
+      #startBtn { width: 100%; }
+
+
+      .canvas-container { flex-direction: column; align-items: center; }
+      .canvas-wrapper { width: 100%; max-width: 720px; }
+      .source-container { display: block; width: 100%; overflow: hidden; }
+
+      .canvas-header { flex-wrap: wrap; }
+      .result-actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
+      .result-actions select, .result-actions button { flex: 1 1 160px; min-width: 140px; }
+
+      .footer { padding: 0 12px; }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="privacy-banner" role="note">
+    <div class="privacy-text">
+      <span class="privacy-pill" data-i18n="privacy.pill">No Uploads</span>
+      <span data-i18n="privacy.banner">Your images never leave your device. Processing happens locally in your browser.</span>
+    </div>
+    <div class="top-actions">
+      <a id="privacyLink" class="privacy-link" href="#" role="button" data-i18n="privacy.link">Privacy</a>
+      <select id="languageSelect" class="lang-select" aria-label="Language">
+        <option value="auto" data-i18n="language.auto">Auto</option>
+        <option value="en" data-i18n="language.en">English</option>
+        <option value="ja" data-i18n="language.ja">日本語</option>
+        <option value="zh-hans" data-i18n="language.zhHans">简体中文</option>
+        <option value="zh-hant" data-i18n="language.zhHant">繁體中文</option>
+        <option value="es" data-i18n="language.es">Español</option>
+        <option value="ko" data-i18n="language.ko">한국어</option>
+        <option value="ru" data-i18n="language.ru">Русский</option>
+        <option value="ar" data-i18n="language.ar">العربية</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 data-i18n="app.title">Free Document Deskew</h1>
+    <p class="subtitle" data-i18n="app.subtitle">Turn your photo into an A4 document image or PDF.</p>
+
+    <div class="top-area">
+      <div class="howto" aria-label="How to use">
+        <div class="howto-title" data-i18n="help.title">How to use</div>
+        <div class="howto-flow">
+          <span class="howto-step" data-i18n="howto.upload">Upload</span>
+          <span class="howto-sep" aria-hidden="true"></span>
+          <span class="howto-step" data-i18n="howto.adjust">Adjust points</span>
+          <span class="howto-sep" aria-hidden="true"></span>
+          <span class="howto-step" data-i18n="howto.start">Start</span>
+          <span class="howto-sep" aria-hidden="true"></span>
+          <span class="howto-step" data-i18n="howto.download">Download</span>
+        </div>
+      </div>
+      <div id="status" aria-live="polite"></div>
+    </div>
+
+    <div class="controls">
+      <div class="primary-row">
+        <input class="file-input" type="file" id="imageInput" accept="image/*" multiple aria-label="Upload image" />
+        <button id="startBtn" class="success" data-i18n="button.start">Start</button>
+      </div>
+    </div>
+
+    <div class="canvas-container">
+      <div class="canvas-wrapper">
+        <div class="canvas-header">
+          <h3 data-i18n="heading.original">Original</h3>
+        </div>
+        <div class="source-container" id="sourceContainer">
+          <canvas id="sourceCanvas"></canvas>
+          <canvas id="overlayCanvas" class="preview-overlay"></canvas>
+        </div>
+      </div>
+
+      <div class="canvas-wrapper">
+        <div class="canvas-header">
+          <h3 data-i18n="heading.result">Result</h3>
+          <div class="result-actions">
+            <select id="outputSize" aria-label="Output size">
+              <option value="a4-300" data-i18n="size.a4_300">A4 (300 DPI) — 2480×3508</option>
+              <option value="a4-150" data-i18n="size.a4_150">A4 (150 DPI) — 1240×1754</option>
+              <option value="a4-72" data-i18n="size.a4_72">A4 (72 DPI) — 595×842</option>
+              <option value="original" data-i18n="size.original">Keep original aspect</option>
+            </select>
+            <select id="downloadFormat" aria-label="Download format">
+              <option value="png" data-i18n="format.png">PNG</option>
+              <option value="jpg" data-i18n="format.jpg">JPG</option>
+              <option value="pdf" data-i18n="format.pdf">PDF</option>
+            </select>
+            <button id="downloadBtn" class="secondary" data-i18n="button.download" disabled>Download</button>
+          </div>
+        </div>
+        <canvas id="outputCanvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">© <span id="copyrightYear"></span> docdeskew.com</footer>
+
+  <div id="privacyModal" class="modal-overlay" aria-hidden="true" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
+      <div class="modal-header">
+        <h2 id="privacyModalTitle" data-i18n="privacy.modalTitle">Privacy</h2>
+        <button id="privacyCloseBtn" class="modal-close" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <p data-i18n="privacy.detailIntro">This is a 100% client-side app. Your images never leave your device.</p>
+
+        <h3 data-i18n="privacy.section1">What we process</h3>
+        <ul>
+          <li data-i18n="privacy.s1.li1">We process your image locally in your browser to generate the transformed result.</li>
+          <li data-i18n="privacy.s1.li2">We do not transmit your image to our servers.</li>
+        </ul>
+
+        <h3 data-i18n="privacy.section2">What we store</h3>
+        <ul>
+          <li data-i18n="privacy.s2.li1">We store only your language preference in your browser (localStorage).</li>
+          <li data-i18n="privacy.s2.li2">You can clear it anytime in your browser settings.</li>
+        </ul>
+
+        <h3 data-i18n="privacy.section3">Downloads</h3>
+        <ul>
+          <li data-i18n="privacy.s3.li1">When you click Download, the file is generated locally and saved to your device.</li>
+        </ul>
+
+        <h3 data-i18n="privacy.section4">Third-party services</h3>
+        <ul>
+          <li data-i18n="privacy.s4.li1">We do not require accounts.</li>
+          <li data-i18n="privacy.s4.li2">We do not use analytics cookies on this page.</li>
+        </ul>
+
+        <p data-i18n="privacy.detailNote">If you have questions, please contact us.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <div id="loadingOverlay" class="loading-overlay" aria-hidden="true">
+    <div class="loading-card">
+      <div class="spinner" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <script>
+    window.scanState = {
+      cvReady: false,
+      scanner: null,
+      pendingAutoDetect: false,
+      onReadyAutoDetect: null
+    };
+    window.Module = {
+      onRuntimeInitialized() {
+        const state = window.scanState;
+        state.cvReady = true;
+        if (typeof jscanify === 'function') {
+          state.scanner = new jscanify();
+        }
+        if (state.pendingAutoDetect && typeof state.onReadyAutoDetect === 'function') {
+          state.pendingAutoDetect = false;
+          state.onReadyAutoDetect();
+        }
+      }
+    };
+  </script>
+  <script async src="https://docs.opencv.org/4.7.0/opencv.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ColonelParrot/jscanify@master/src/jscanify.min.js"></script>
+  <script>
+    if (window.scanState && window.scanState.cvReady && typeof jscanify === 'function') {
+      window.scanState.scanner = new jscanify();
+    }
+    if (
+      window.scanState &&
+      window.scanState.pendingAutoDetect &&
+      window.scanState.cvReady &&
+      typeof cv !== 'undefined' &&
+      typeof window.scanState.onReadyAutoDetect === 'function'
+    ) {
+      window.scanState.pendingAutoDetect = false;
+      window.scanState.onReadyAutoDetect();
+    }
+  </script>
+
+  <script src="assets/app.packed.js"></script>
+</body>
+
+</html>
+
