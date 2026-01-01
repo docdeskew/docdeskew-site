@@ -311,9 +311,48 @@
       color: #fff;
     }
 
+    /* Custom file picker (more consistent on iOS than styling native file input) */
     .file-input {
-      flex: 1 1 420px;
-      min-width: 240px;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+      opacity: 0;
+    }
+
+    .upload-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(15, 15, 35, 0.9);
+      color: #fff;
+      font-weight: 900;
+      cursor: pointer;
+      user-select: none;
+      min-height: 44px;
+      flex: 0 0 auto;
+    }
+
+    .upload-btn:hover { filter: brightness(1.05); }
+
+    .file-name {
+      flex: 1 1 260px;
+      min-width: 140px;
+      color: rgba(255,255,255,0.78);
+      font-size: 13px;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 8px 0;
     }
 
     button {
@@ -605,35 +644,8 @@
       .lang-select { max-width: 180px; }
 
       .primary-row { flex-direction: column; align-items: stretch; }
-      .file-input {
-        width: 100%;
-        min-width: 0;
-        height: 44px;
-        padding: 8px 10px;
-        font-size: 16px;
-      }
-      .file-input::file-selector-button {
-        height: 30px;
-        padding: 6px 10px;
-        border: 0;
-        border-radius: 10px;
-        margin-right: 10px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: #fff;
-        font-weight: 900;
-        cursor: pointer;
-      }
-      .file-input::-webkit-file-upload-button {
-        height: 30px;
-        padding: 6px 10px;
-        border: 0;
-        border-radius: 10px;
-        margin-right: 10px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: #fff;
-        font-weight: 900;
-        cursor: pointer;
-      }
+      .upload-btn { width: 100%; }
+      .file-name { width: 100%; padding: 0; }
       #startBtn { width: 100%; }
 
 
@@ -701,6 +713,8 @@
     <div class="controls">
       <div class="primary-row">
         <input class="file-input" type="file" id="imageInput" accept="image/*" multiple aria-label="Upload image" />
+        <label class="upload-btn" for="imageInput" data-i18n="label.selectImage">Upload</label>
+        <div id="selectedFileName" class="file-name" aria-live="polite"></div>
         <button id="startBtn" class="success" data-i18n="button.start">Start</button>
       </div>
     </div>
