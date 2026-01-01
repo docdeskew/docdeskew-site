@@ -2,10 +2,19 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQ02VVBMBS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YQ02VVBMBS');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free beautiful document scan online. Scan from photo, document scanner online, photo to scan: fix skew & perspective and download a clean scan." />
-  <meta name="keywords" content="free document deskew, deskew online, document dewarp, scan document online, perspective correction, free scan online, document perspective correction, 文書 傾き 補正 無料, ドキュメント スキャン 補正, 免费 文档 去倾斜, 透视 校正 在线, escanear documento online, corrección de perspectiva documento, تصحيح منظور المستند, выпрямить документ онлайн, 문서 기울기 보정" />
+  <meta name="description" content="Completely free scan from photo. Fix skew & perspective, auto-detect page corners, and download a clean A4 scan as PNG/JPG/PDF — no uploads, all local in your browser." />
+  <meta name="keywords" content="completely free scan from photo, scan from photo, free document scan, online document scanner, document deskew, deskew online, perspective correction, photo to scan, A4 scan, no upload, local processing, 文書 傾き 補正 無料, ドキュメント スキャン 補正, 免费 文档 去倾斜, 透视 校正 在线, escanear documento online, corrección de perspectiva documento, تصحيح منظور المستند, выпрямить документ онлайн, 문서 기울기 보정" />
   <meta name="robots" content="index,follow" />
 
   <link rel="canonical" href="https://docdeskew.com/" />
@@ -21,8 +30,8 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="DocDeskew" />
-  <meta property="og:title" content="Free Beautiful Document Scan Online | DocDeskew" />
-  <meta property="og:description" content="Free document deskew online. Fix skew and perspective, auto-detect page corners, and download a clean scan." />
+  <meta property="og:title" content="Completely Free Scan from Photo | DocDeskew" />
+  <meta property="og:description" content="Completely free scan from photo: fix skew & perspective, auto-detect page corners, and download a clean A4 scan (PNG/JPG/PDF). No uploads — runs locally in your browser." />
   <meta property="og:url" content="https://docdeskew.com/" />
   <meta property="og:image" content="https://docdeskew.com/doc_en.jpg" />
   <meta property="og:locale" content="en_US" />
@@ -30,12 +39,12 @@
   <meta property="og:locale:alternate" content="zh_CN" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Free Beautiful Document Scan Online | DocDeskew" />
-  <meta name="twitter:description" content="Free document deskew online. Fix skew and perspective, auto-detect page corners, and download a clean scan." />
+  <meta name="twitter:title" content="Completely Free Scan from Photo | DocDeskew" />
+  <meta name="twitter:description" content="Completely free scan from photo: fix skew & perspective, auto-detect page corners, and download a clean A4 scan (PNG/JPG/PDF). No uploads — runs locally in your browser." />
   <meta name="twitter:image" content="https://docdeskew.com/doc_en.jpg" />
 
   <meta name="theme-color" content="#1a1a2e" />
-  <title>Free Beautiful Document Scan Online | DocDeskew</title>
+  <title>Completely Free Scan from Photo | DocDeskew</title>
 
   <script type="application/ld+json">
     {
@@ -45,9 +54,42 @@
       "url": "https://docdeskew.com/",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "All",
-      "description": "Free document deskew online. Fix skew and perspective, auto-detect page corners, and download a clean scan.",
+      "description": "Completely free scan from photo. Fix skew & perspective, auto-detect page corners, and download a clean A4 scan locally in your browser.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "inLanguage": ["en", "ja", "zh-Hans", "zh-Hant", "es", "ko", "ru", "ar"]
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this scan from photo tool completely free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. DocDeskew is completely free to use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my photos uploaded to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your images never leave your device. Processing happens locally in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I download after scanning from photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can download the corrected scan as PNG, JPG, or PDF."
+          }
+        }
+      ]
     }
   </script>
 
@@ -599,6 +641,11 @@
       .canvas-wrapper { width: 100%; max-width: 720px; }
       .source-container { display: block; width: 100%; overflow: hidden; }
 
+      /* Easier to grab on touch screens */
+      .control-point.corner { width: 26px; height: 26px; }
+      .control-point.edge { width: 20px; height: 20px; }
+      .control-point.grid { width: 18px; height: 18px; }
+
       .canvas-header { flex-wrap: wrap; }
       .result-actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
       .result-actions select, .result-actions button { flex: 1 1 160px; min-width: 140px; }
@@ -783,4 +830,3 @@
 </body>
 
 </html>
-
