@@ -7,6 +7,8 @@
   <meta name="description" content="Free document tools: scan from photo, PDF merge/split, and HEIC conversion to JPG/PNG/WebP/GIF/BMP. All tools run locally in your browser, no uploads.">
   <meta name="keywords" content="free document tools, scan from photo, document deskew, pdf merge, pdf split, pdf to image, heic to jpg, heic to png, heic to webp, heic to gif, heic to bmp, online document tools, no upload">
   <meta name="robots" content="index,follow">
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="apple-touch-icon" href="/logo.png">
 
   <link rel="canonical" href="https://docdeskew.com/">
   <link rel="alternate" hreflang="en" href="https://docdeskew.com/?lang=en">
@@ -82,12 +84,12 @@
       letter-spacing: 0.4px;
     }
 
-    .brand-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #48bb78 0%, #667eea 100%);
-      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      object-fit: contain;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
     }
 
     .top-actions {
@@ -364,7 +366,7 @@
 <body>
   <div class="privacy-banner" role="note">
     <div class="brand">
-      <span class="brand-dot" aria-hidden="true"></span>
+      <img class="brand-logo" src="/logo.png" alt="DocDeskew logo">
       <span>DocDeskew</span>
     </div>
     <div class="top-actions">
@@ -407,15 +409,12 @@
         <span class="tool-cta" data-i18n="tool.open">Open tool</span>
       </a>
 
-      <a class="tool-card" href="./pdf/merge/" data-status="soon">
+      <a class="tool-card" href="./pdf/merge/">
         <span class="tool-tag" data-i18n="tag.pdf">PDF</span>
         <h3 data-i18n="tool.pdfMerge.title">Merge PDFs</h3>
         <p data-i18n="tool.pdfMerge.desc">Combine multiple PDF files into a single document, right in your browser.</p>
         <img src="pdf/merge/demo.png" alt="Merge PDF preview">
-        <div class="tool-cta">
-          <span data-i18n="tool.open">Open tool</span>
-          <span class="tool-status" data-i18n="tool.comingSoon">Coming soon</span>
-        </div>
+        <span class="tool-cta" data-i18n="tool.open">Open tool</span>
       </a>
 
       <a class="tool-card" href="./pdf/split/" data-status="soon">

@@ -7,6 +7,8 @@
   <meta name="description" content="Scan from photo: fix skew & perspective, auto-detect page corners, and download a clean A4 scan as PNG/JPG/PDF — 100% free, no uploads." />
   <meta name="keywords" content="scan from photo, document deskew, free document scan, online document scanner, perspective correction, photo to scan, A4 scan, no upload, local processing, 文書 傾き 補正 無料, ドキュメント スキャン 補正, 免费 文档 去倾斜, 透视 校正 在线, escanear documento online, corrección de perspectiva documento, تصحيح منظور المستند, выпрямить документ онлайн, 문서 기울기 보정" />
   <meta name="robots" content="index,follow" />
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="apple-touch-icon" href="/logo.png">
 
   <link rel="canonical" href="https://docdeskew.com/deskew/" />
   <link rel="alternate" hreflang="en" href="https://docdeskew.com/deskew/?lang=en" />
@@ -82,6 +84,30 @@
     .privacy-banner strong {
       color: #fff;
       font-weight: 800;
+    }
+
+    .banner-left {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      object-fit: contain;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
     }
 
     .privacy-text {
@@ -717,9 +743,15 @@
 
 <body>
   <div class="privacy-banner" role="note">
-    <div class="privacy-text">
-      <span class="privacy-pill" data-i18n="privacy.pill">No Uploads</span>
-      <span data-i18n="privacy.banner">Your images never leave your device. Processing happens locally in your browser.</span>
+    <div class="banner-left">
+      <a class="brand" href="../">
+        <img class="brand-logo" src="/logo.png" alt="DocDeskew logo">
+        <span>DocDeskew</span>
+      </a>
+      <div class="privacy-text">
+        <span class="privacy-pill" data-i18n="privacy.pill">No Uploads</span>
+        <span data-i18n="privacy.banner">Your images never leave your device. Processing happens locally in your browser.</span>
+      </div>
     </div>
     <div class="top-actions">
       <a class="privacy-link" href="../" data-i18n="nav.home">Home</a>

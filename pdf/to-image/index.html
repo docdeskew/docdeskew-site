@@ -7,6 +7,8 @@
   <meta name="description" content="Convert PDF pages to images locally in your browser. PNG/JPG output, no uploads.">
   <meta name="keywords" content="pdf to image, pdf to jpg, pdf to png, convert pdf pages, no upload">
   <meta name="robots" content="index,follow">
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="apple-touch-icon" href="/logo.png">
 
   <link rel="canonical" href="https://docdeskew.com/pdf/to-image/">
   <link rel="alternate" hreflang="en" href="https://docdeskew.com/pdf/to-image/?lang=en">
@@ -80,12 +82,12 @@
       letter-spacing: 0.4px;
     }
 
-    .brand-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #48bb78 0%, #667eea 100%);
-      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      object-fit: contain;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
     }
 
     .top-actions {
@@ -263,7 +265,7 @@
 <body>
   <div class="privacy-banner" role="note">
     <div class="brand">
-      <span class="brand-dot" aria-hidden="true"></span>
+      <img class="brand-logo" src="/logo.png" alt="DocDeskew logo">
       <a href="../../">DocDeskew</a>
     </div>
     <div class="top-actions">
