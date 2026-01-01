@@ -355,6 +355,11 @@
       padding: 8px 0;
     }
 
+    .mobile-start-slot {
+      display: none;
+      margin-top: 12px;
+    }
+
     button {
       padding: 12px 18px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -653,6 +658,8 @@
       .canvas-wrapper { width: 100%; max-width: 720px; }
       .source-container { display: block; width: 100%; overflow: hidden; }
 
+      .mobile-start-slot { display: block; }
+
       /* Easier to grab on touch screens */
       .control-point.corner { width: 26px; height: 26px; }
       .control-point.edge { width: 20px; height: 20px; }
@@ -728,6 +735,7 @@
           <canvas id="sourceCanvas"></canvas>
           <canvas id="overlayCanvas" class="preview-overlay"></canvas>
         </div>
+        <div id="mobileStartSlot" class="mobile-start-slot"></div>
       </div>
 
       <div class="canvas-wrapper">
