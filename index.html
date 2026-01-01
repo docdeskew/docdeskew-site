@@ -2,15 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQ02VVBMBS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YQ02VVBMBS');
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Completely free scan from photo. Fix skew & perspective, auto-detect page corners, and download a clean A4 scan as PNG/JPG/PDF — no uploads, all local in your browser." />
@@ -543,6 +534,83 @@
 
     .toast.show { opacity: 1; }
 
+    .cookie-banner {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      margin: 0 auto;
+      max-width: 980px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(15, 15, 35, 0.95);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+      z-index: 1400;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .cookie-banner.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .cookie-text {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+      color: rgba(255,255,255,0.82);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .cookie-text strong { color: #fff; font-weight: 900; }
+
+    .cookie-link {
+      color: #cfd6ff;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(207, 214, 255, 0.35);
+      width: fit-content;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+
+    .cookie-btn {
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,0.12);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .cookie-btn.primary {
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      color: #fff;
+      border-color: rgba(72, 187, 120, 0.45);
+    }
+
+    .cookie-btn.secondary {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
     .footer {
       max-width: 1600px;
       margin: 14px auto 28px;
@@ -670,6 +738,10 @@
       .result-actions select, .result-actions button { flex: 1 1 160px; min-width: 140px; }
 
       .footer { padding: 0 12px; }
+
+      .cookie-banner { left: 10px; right: 10px; }
+      .cookie-actions { width: 100%; justify-content: flex-end; }
+      .cookie-btn { flex: 1 1 0; }
     }
 
   </style>
@@ -790,8 +862,11 @@
 
         <h3 data-i18n="privacy.section4">Third-party services</h3>
         <ul>
-          <li data-i18n="privacy.s4.li1">We do not require accounts.</li>
-          <li data-i18n="privacy.s4.li2">We do not use analytics cookies on this page.</li>
+          <li data-i18n="privacy.s4.li1">We use Google Analytics to understand usage and improve the product.</li>
+          <li>
+            <span data-i18n="privacy.s4.li2">Google may set cookies or process usage data.</span>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" data-i18n="privacy.googlePolicy">Google Privacy Policy</a>
+          </li>
         </ul>
 
         <p data-i18n="privacy.detailNote">If you have questions, please contact us.</p>
@@ -805,6 +880,18 @@
   <div id="loadingOverlay" class="loading-overlay" aria-hidden="true">
     <div class="loading-card">
       <div class="spinner" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <div class="cookie-text">
+      <strong data-i18n="cookie.title">Cookies & Analytics</strong>
+      <span data-i18n="cookie.desc">We use Google Analytics to understand usage and improve the product. You can accept or reject analytics cookies.</span>
+      <a class="cookie-link" href="./privacy.html" data-i18n="cookie.link">Learn more</a>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookieRejectBtn" class="cookie-btn secondary" data-i18n="cookie.reject">Reject</button>
+      <button id="cookieAcceptBtn" class="cookie-btn primary" data-i18n="cookie.accept">Accept</button>
     </div>
   </div>
 
