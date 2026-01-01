@@ -684,7 +684,6 @@
     <div class="top-actions">
       <a id="privacyLink" class="privacy-link" href="#" role="button" data-i18n="privacy.link">Privacy</a>
       <select id="languageSelect" class="lang-select" aria-label="Language">
-        <option value="auto" data-i18n="language.auto">Auto</option>
         <option value="en" data-i18n="language.en">English</option>
         <option value="ja" data-i18n="language.ja">日本語</option>
         <option value="zh-hans" data-i18n="language.zhHans">简体中文</option>
@@ -729,7 +728,7 @@
     <div class="canvas-container">
       <div class="canvas-wrapper">
         <div class="canvas-header">
-          <h3 data-i18n="heading.original">Original</h3>
+          <h3 id="originalTitle" data-i18n="heading.original">Original</h3>
         </div>
         <div class="source-container" id="sourceContainer">
           <canvas id="sourceCanvas"></canvas>
@@ -740,7 +739,7 @@
 
       <div class="canvas-wrapper">
         <div class="canvas-header">
-          <h3 data-i18n="heading.result">Result</h3>
+          <h3 id="resultTitle" data-i18n="heading.result">Result</h3>
           <div class="result-actions">
             <select id="outputSize" aria-label="Output size">
               <option value="a4-300" data-i18n="size.a4_300">A4 (300 DPI) — 2480×3508</option>
