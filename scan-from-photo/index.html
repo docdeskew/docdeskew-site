@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=./deskew/" />
-    <title>DocDeskew</title>
+    <meta http-equiv="refresh" content="0; url=/deskew/" />
     <link rel="canonical" href="https://docdeskew.com/deskew/" />
+    <title>Scan from Photo | DocDeskew</title>
   </head>
   <body>
-    <p><a href="./deskew/">Open DocDeskew</a></p>
+    <p><a href="/deskew/">Open DocDeskew</a></p>
     <script>
-      location.replace("./deskew/");
+      const qs = window.location.search || '';
+      location.replace('/deskew/' + qs);
     </script>
   </body>
 </html>

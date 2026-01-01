@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Split PDF files locally in your browser. Extract pages without uploads.">
+  <meta name="keywords" content="split pdf, extract pdf pages, pdf splitter, no upload">
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://docdeskew.com/pdf/split/">
+  <link rel="alternate" hreflang="en" href="https://docdeskew.com/pdf/split/?lang=en">
+  <link rel="alternate" hreflang="ja" href="https://docdeskew.com/pdf/split/?lang=ja">
+  <link rel="alternate" hreflang="zh-Hans" href="https://docdeskew.com/pdf/split/?lang=zh-hans">
+  <link rel="alternate" hreflang="zh-Hant" href="https://docdeskew.com/pdf/split/?lang=zh-hant">
+  <link rel="alternate" hreflang="es" href="https://docdeskew.com/pdf/split/?lang=es">
+  <link rel="alternate" hreflang="ko" href="https://docdeskew.com/pdf/split/?lang=ko">
+  <link rel="alternate" hreflang="ru" href="https://docdeskew.com/pdf/split/?lang=ru">
+  <link rel="alternate" hreflang="ar" href="https://docdeskew.com/pdf/split/?lang=ar">
+  <link rel="alternate" hreflang="x-default" href="https://docdeskew.com/pdf/split/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DocDeskew">
+  <meta property="og:title" content="Split PDF Files | DocDeskew">
+  <meta property="og:description" content="Split PDF files locally in your browser. Extract pages without uploads.">
+  <meta property="og:url" content="https://docdeskew.com/pdf/split/">
+  <meta property="og:image" content="https://docdeskew.com/doc_en.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Split PDF Files | DocDeskew">
+  <meta name="twitter:description" content="Split PDF files locally in your browser. Extract pages without uploads.">
+  <meta name="twitter:image" content="https://docdeskew.com/doc_en.jpg">
+
+  <meta name="theme-color" content="#15162b">
+  <title>Split PDF Files | DocDeskew</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #15162b;
+      --panel: rgba(22, 33, 62, 0.95);
+      --panel-soft: rgba(15, 15, 35, 0.8);
+      --text: #e8e8f3;
+      --muted: rgba(232, 232, 243, 0.7);
+      --outline: rgba(255,255,255,0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      background: radial-gradient(circle at top, rgba(102, 126, 234, 0.16), transparent 55%),
+        radial-gradient(circle at 20% 20%, rgba(72, 187, 120, 0.12), transparent 45%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .privacy-banner {
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: rgba(15, 15, 35, 0.92);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #48bb78 0%, #667eea 100%);
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-link,
+    .privacy-link {
+      font-size: 13px;
+      color: #cfd6ff;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(207, 214, 255, 0.35);
+      white-space: nowrap;
+    }
+
+    .lang-select {
+      padding: 8px 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      font-size: 13px;
+      background: rgba(15, 15, 35, 0.9);
+      color: #fff;
+      max-width: 210px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 26px 20px 40px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 18px;
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      margin-bottom: 22px;
+    }
+
+    .hero h1 { margin: 0; font-size: clamp(26px, 4vw, 38px); }
+
+    .hero p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+
+    .coming-soon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(233, 69, 96, 0.18);
+      border: 1px solid rgba(233, 69, 96, 0.25);
+      color: #ffd8df;
+      font-weight: 900;
+      font-size: 12px;
+      width: fit-content;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #0b0b18;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .details {
+      background: var(--panel-soft);
+      border-radius: 14px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .details p { margin: 0 0 12px; color: var(--muted); line-height: 1.6; }
+
+    .details ul { margin: 0; padding-left: 18px; color: var(--muted); }
+
+    .details li { margin: 6px 0; }
+
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      padding: 0 12px 26px;
+    }
+
+    .cookie-banner {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      margin: 0 auto;
+      max-width: 980px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(15, 15, 35, 0.95);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+      z-index: 1400;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .cookie-banner.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .cookie-text {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+      color: rgba(255,255,255,0.82);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .cookie-text strong { color: #fff; font-weight: 900; }
+
+    .cookie-link {
+      color: #cfd6ff;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(207, 214, 255, 0.35);
+      width: fit-content;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+
+    .cookie-btn {
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,0.12);
+      cursor: pointer;
+      white-space: nowrap;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
+    .cookie-btn.primary {
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      border-color: rgba(72, 187, 120, 0.45);
+    }
+
+    @media (max-width: 820px) {
+      .container { padding: 18px 14px 34px; }
+      .cookie-banner { left: 10px; right: 10px; }
+      .cookie-actions { width: 100%; justify-content: flex-end; }
+      .cookie-btn { flex: 1 1 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="privacy-banner" role="note">
+    <div class="brand">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <a href="../../">DocDeskew</a>
+    </div>
+    <div class="top-actions">
+      <a class="nav-link" href="../../" data-i18n="nav.home">Home</a>
+      <a class="privacy-link" href="../../privacy.html" data-i18n="privacy.link">Privacy</a>
+      <select id="languageSelect" class="lang-select" aria-label="Language">
+        <option value="en" data-i18n="language.en">English</option>
+        <option value="ja" data-i18n="language.ja">日本語</option>
+        <option value="zh-hans" data-i18n="language.zhHans">简体中文</option>
+        <option value="zh-hant" data-i18n="language.zhHant">繁體中文</option>
+        <option value="es" data-i18n="language.es">Español</option>
+        <option value="ko" data-i18n="language.ko">한국어</option>
+        <option value="ru" data-i18n="language.ru">Русский</option>
+        <option value="ar" data-i18n="language.ar">العربية</option>
+      </select>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1 data-i18n="toolpage.pdfSplit.title">Split PDF Files</h1>
+        <p data-i18n="toolpage.pdfSplit.subtitle">Extract or split PDF pages without uploading.</p>
+        <span class="coming-soon" data-i18n="tool.comingSoon">Coming soon</span>
+      </div>
+      <img src="demo.png" alt="Split PDF preview">
+    </section>
+
+    <section class="details">
+      <p data-i18n="toolpage.pdfSplit.desc">Choose page ranges and export separate PDF files.</p>
+      <ul>
+        <li data-i18n="tool.feature.local">100% client-side processing</li>
+        <li data-i18n="tool.feature.private">Files never leave your device</li>
+        <li data-i18n="tool.feature.free">Free to use, no sign-up</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">© <span id="copyrightYear"></span> docdeskew.com</footer>
+
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <div class="cookie-text">
+      <strong data-i18n="cookie.title">Cookies & Analytics</strong>
+      <span data-i18n="cookie.desc">We use Google Analytics to understand usage and improve the product. You can accept or reject analytics cookies.</span>
+      <a class="cookie-link" href="../../privacy.html" data-i18n="cookie.link">Learn more</a>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookieRejectBtn" class="cookie-btn" data-i18n="cookie.reject">Reject</button>
+      <button id="cookieAcceptBtn" class="cookie-btn primary" data-i18n="cookie.accept">Accept</button>
+    </div>
+  </div>
+
+  <script src="../../assets/app.packed.js"></script>
+</body>
+
+</html>
