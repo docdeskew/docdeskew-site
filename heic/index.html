@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Convert HEIC to JPG, PNG, WebP, GIF, or BMP locally in your browser. No uploads, no accounts.">
-  <meta name="keywords" content="heic to jpg, heic to png, heic to webp, heic to gif, heic to bmp, iphone heic converter, heic converter online, no upload">
+  <meta name="description" content="Convert HEIC to JPG/JPEG, PNG, WebP, GIF, BMP, or PDF locally in your browser. Completely free—no uploads, no accounts.">
+  <meta name="keywords" content="heic to jpg, heic to png, heic to jpeg, heic to pdf, heic to webp, heic to gif, heic to bmp, heic to jpg converter, heic to jpg free, heic file to jpg, heic to jpg converter free, iphone heic converter, heic converter online, no upload">
   <meta name="robots" content="index,follow">
   <link rel="icon" type="image/png" href="/logo.png">
   <link rel="apple-touch-icon" href="/logo.png">
@@ -23,18 +23,18 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DocDeskew">
-  <meta property="og:title" content="HEIC to JPG/PNG/WebP/GIF/BMP Converter | DocDeskew">
-  <meta property="og:description" content="Convert HEIC photos to JPG, PNG, WebP, GIF, or BMP locally in your browser. No uploads, no accounts.">
+  <meta property="og:title" content="Free HEIC to JPG/PNG/PDF Converter | DocDeskew">
+  <meta property="og:description" content="Convert HEIC to JPG/JPEG, PNG, WebP, GIF, BMP, or PDF locally in your browser. Completely free—no uploads, no accounts.">
   <meta property="og:url" content="https://docdeskew.com/heic/">
   <meta property="og:image" content="https://docdeskew.com/doc_en.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HEIC to JPG/PNG/WebP/GIF/BMP Converter | DocDeskew">
-  <meta name="twitter:description" content="Convert HEIC photos to JPG, PNG, WebP, GIF, or BMP locally in your browser. No uploads, no accounts.">
+  <meta name="twitter:title" content="Free HEIC to JPG/PNG/PDF Converter | DocDeskew">
+  <meta name="twitter:description" content="Convert HEIC to JPG/JPEG, PNG, WebP, GIF, BMP, or PDF locally in your browser. Completely free—no uploads, no accounts.">
   <meta name="twitter:image" content="https://docdeskew.com/doc_en.jpg">
 
   <meta name="theme-color" content="#15162b">
-  <title>HEIC to JPG/PNG/WebP/GIF/BMP Converter | DocDeskew</title>
+  <title>Free HEIC to JPG/PNG/PDF Converter | DocDeskew</title>
 
   <style>
     :root {
@@ -569,8 +569,8 @@
 
   <main class="container">
     <section class="hero">
-      <h1 data-i18n="toolpage.heic.title">HEIC to JPG/PNG/WebP/GIF/BMP</h1>
-      <p data-i18n="toolpage.heic.subtitle">Convert iPhone HEIC photos to JPG, PNG, WebP, GIF, or BMP locally.</p>
+      <h1 data-i18n="toolpage.heic.title">HEIC to JPG/PNG/WebP/GIF/BMP/PDF</h1>
+      <p data-i18n="toolpage.heic.subtitle">Convert iPhone HEIC photos to JPG, PNG, WebP, GIF, BMP, or PDF locally.</p>
       <div class="hero-badges">
         <span class="badge" data-i18n="tool.feature.local">100% client-side processing</span>
         <span class="badge" data-i18n="tool.feature.private">Files never leave your device</span>
@@ -584,7 +584,7 @@
         <input id="heicInput" class="file-input" type="file" accept="image/heic,image/heif,.heic,.heif,image/*" multiple>
       <label id="dropZone" class="file-drop" for="heicInput">
         <span class="file-drop-title" data-i18n="heic.upload.hint">Drag &amp; drop or click to select</span>
-          <span class="file-drop-note" data-i18n="heic.upload.note">HEIC/HEIF preferred. Other images supported. Output JPG/PNG/WebP/GIF/BMP.</span>
+          <span class="file-drop-note" data-i18n="heic.upload.note">HEIC/HEIF preferred. Other images supported. Output JPG/PNG/WebP/GIF/BMP/PDF.</span>
       </label>
       <div id="fileSummary" class="file-summary"></div>
       <div id="fileNames" class="file-names"></div>
@@ -599,6 +599,7 @@
               <option value="image/webp">WebP</option>
               <option value="image/gif">GIF</option>
               <option value="image/bmp">BMP</option>
+              <option value="application/pdf">PDF</option>
             </select>
           </div>
           <div class="option" id="qualityWrap">
@@ -649,6 +650,7 @@
 
   <script src="../assets/common.packed.js"></script>
   <script src="../assets/heic2any.min.js"></script>
+  <script src="../assets/pdf-lib.min.js"></script>
   <script src="../assets/heic.packed.js"></script>
 
 </body>
